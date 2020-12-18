@@ -1,5 +1,16 @@
+
 alias kc='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
+
+alias kcg='f(){ kubectl get "$@" --all-namespaces -o wide;  unset -f f; }; f'
+
 alias kcgp='f(){ kubectl get pod -o wide;  unset -f f; }; f'
 alias kcgd='f(){ kubectl get deployment -o wide;  unset -f f; }; f'
 alias kcgc='f(){ kubectl get service -o wide;  unset -f f; }; f'
 alias kcgrs='f(){ kubectl get replicaset -o wide;  unset -f f; }; f'
+
+
+alias kcd='f(){ kubectl describe "$@" ;  unset -f f; }; f'
+alias kcdp='f(){ kubectl describe pod "$@" ;  unset -f f; }; f'
+alias kcdd='f(){ kubectl describe deployment "$@"  ;  unset -f f; }; f'
+alias kcdrs='f(){ kubectl describe replicaset "$@"  ;  unset -f f; }; f'
+alias kcds='f(){ kubectl describe service "$@"  ;  unset -f f; }; f'
