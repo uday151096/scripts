@@ -1,7 +1,9 @@
-
 alias kc='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
 
 alias kcg='f(){ kubectl get "$@" --all-namespaces -o wide;  unset -f f; }; f'
+
+alias kce='f(){ kubectl edit "$@";  unset -f f; }; f'
+alias kcdl='f(){ kubectl delete "$@";  unset -f f; }; f'
 
 alias kcgp='f(){ kubectl get pod -o wide;  unset -f f; }; f'
 alias kcgd='f(){ kubectl get deployment -o wide;  unset -f f; }; f'
