@@ -1,4 +1,4 @@
-alias kc='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
+alias kc='f(){ kubectl "$@" ;  unset -f f; }; f'
 
 alias kcg='f(){ kubectl get "$@" --all-namespaces -o wide;  unset -f f; }; f'
 
