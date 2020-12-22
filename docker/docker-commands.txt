@@ -1,0 +1,3 @@
+docker run <image name>
+docker ps
+docker ps -a
