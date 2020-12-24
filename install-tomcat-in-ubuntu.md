@@ -41,7 +41,3 @@ cd /usr/local/tomcat/bin/
 sudo kill -9 <processid> 
 ``` 
 
-ps -ef | grep tomcat
-
-
-```
