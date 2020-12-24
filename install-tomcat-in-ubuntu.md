@@ -23,17 +23,16 @@
 ```
 
 ## check process 
-
-``` ps -ef | grep tomcat
+ ps -ef | grep tomcat
 ```
 
 ## stop tomcat 
-``` ./shutdown.sh ```
+./shutdown.sh
 ``` 
 
 ## kill process 
 sudo kill -9 <processid> 
-
+``` 
 ``` ps -ef | grep tomcat
 
 
