@@ -15,11 +15,10 @@
 ``` 
 
 ## rename installation direcotry
-mv apache-tomcat-8.5.56.tar.gz tomcat 
-
+``` mv apache-tomcat-8.5.56.tar.gz tomcat 
+`` 
 ## start tomcat
 ``` cd /usr/local/tomcat/bin/
-
 ./startup.sh 
 ```
 
@@ -30,11 +29,12 @@ mv apache-tomcat-8.5.56.tar.gz tomcat
 
 ## stop tomcat 
 ``` ./shutdown.sh ```
+``` 
 
 ## kill process 
-
+sudo kill -9 <processid> 
 
 ``` ps -ef | grep tomcat
 
-sudo kill -9 <processid> 
+
 ```
