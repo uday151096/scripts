@@ -15,10 +15,12 @@
 ``` 
 
 ## rename installation direcotry
-``` mv apache-tomcat-8.5.56.tar.gz tomcat 
+``` 
+mv apache-tomcat-8.5.56.tar.gz tomcat 
 ``` 
 ## start tomcat
-``` cd /usr/local/tomcat/bin/
+``` 
+cd /usr/local/tomcat/bin/
 ./startup.sh 
 ```
 
