@@ -2,7 +2,7 @@
 
 ## update packages
 ``` sudo apt-get update
-
+``` 
 ## install openjdk 8
 
 ``` sudo apt install openjdk-8-jdk 
@@ -16,20 +16,20 @@
 
 ## rename installation direcotry
 ``` mv apache-tomcat-8.5.56.tar.gz tomcat 
-
+``` 
 ## start tomcat
 ``` cd /usr/local/tomcat/bin/
 ./startup.sh 
 ```
 
 ## check process 
- ps -ef | grep tomcat
-```
+ ``` ps -ef | grep tomcat
 
+``` 
 ## stop tomcat 
 ./shutdown.sh
 ``` 
-
+``` 
 ## kill process 
 sudo kill -9 <processid> 
 ``` 
