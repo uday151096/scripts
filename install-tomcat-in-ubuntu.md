@@ -17,7 +17,7 @@ wget https://mirror.csclub.uwaterloo.ca/apache/tomcat/tomcat-8/v8.5.56/bin/apach
 tar xvzf apache-tomcat-8.5.56.tar.gz 
 ``` 
 
-## rename installation direcotry
+## rename installation directory
 ``` 
 mv apache-tomcat-8.5.56.tar.gz tomcat 
 ``` 
