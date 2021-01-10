@@ -1,4 +1,5 @@
 `` Kibana default port no 5601.
+`` elasticsearch port 9200
 
 `` install metricbeat
 
