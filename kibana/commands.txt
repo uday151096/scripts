@@ -1,0 +1,3 @@
+
+sudo apt-get install metricbeat
+sudo systemctl start metricbeat  -- all rich metric like cpu,load, memory, network, processes etc are all being collected into elasticsearch in 10 sec interval 
