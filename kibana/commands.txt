@@ -26,3 +26,7 @@ stress --vm 5 --timeout 180
 
 
 
+`` bring logstash server up. browse to logstash bin folder and execute below folder. make sure you have logstask.conf file configured properly
+logstash -f logstash.conf
+
+
