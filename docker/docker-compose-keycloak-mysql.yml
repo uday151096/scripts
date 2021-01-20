@@ -46,5 +46,7 @@ services:
       - 8181:8080
     expose:
       - 8181
+    links:
+      - db
 volumes:
   v_keycloak_data:
