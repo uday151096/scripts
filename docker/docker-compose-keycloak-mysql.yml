@@ -17,17 +17,8 @@ services:
       - 3306
     ports:
       - 3306:3306
-  # phpmyadmin
-  phpmyadmin:
-    depends_on:
-      - db
-    image: phpmyadmin/phpmyadmin:5
-    restart: always
-    ports:
-      - '8899:80'
-    environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: passowrd
+    networks:
+      - mysqlnet
   # Keycloak
   keycloak:
     depends_on:
@@ -35,18 +26,23 @@ services:
     image: jboss/keycloak:12.0.2
     restart: always
     environment:
-      DB_VENDOR: MYSQL
-      DB_DATABASE: KEYCLOAK
-      DB_USER: keycloak
-      DB_PASSWORD: passowrd
-      DB_PORT: 3306
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: passowrd
-    ports:
-      - 8181:8080
+        DB_VENDOR: MYSQL
+        DB_ADDR: db
+        DB_DATABASE: DATABASEDB
+        DB_USER: testusr
+        DB_PASSWORD: password
+        #JDBC_PARAMS: "useSSL=false"
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: password
     expose:
-      - 8181
-    links:
-      - db
+      - '8443'
+      - '8080'
+    ports:
+      - '8080:8080'
+      - '8443:8443'
+    networks:
+      - mysqlnet
 volumes:
   v_keycloak_data:
+networks:
+  mysqlnet:
