@@ -1,48 +1,51 @@
-version: '3'
-
+version: '3.7'
+# use atleast t3.small instance type. t2.micro will not be sufficient for this
 services:
   # Database
   db:
-    image: mysql:5.7
+    image: mysql:8.0.23
     volumes:
-      - db_data:/var/lib/mysql
+     - v_mysql_data:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: password
-      MYSQL_USER: wpuser
+      MYSQL_ROOT_PASSWORD: password1
+      MYSQL_DATABASE: MYDB
+      MYSQL_USER: testuser
       MYSQL_PASSWORD: password
     networks:
-      - wpsite
+      - mysqlnet
   # phpmyadmin
   phpmyadmin:
     depends_on:
       - db
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:5
     restart: always
     ports:
-      - '8080:80'
+      - '8899:80'
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: password1
     networks:
-      - wpsite
-  # Wordpress
+      - mysqlnet
+# Wordpress
   wordpress:
     depends_on:
       - db
-    image: wordpress:latest
+    image: wordpress:5.6
     ports:
-      - '8000:80'
+      - '8080:80'
     restart: always
-    volumes: ['./:/var/www/html']
+    volumes: 
+     - v_wp_data:/var/www/html
     environment:
+      WORDPRESS_DB_NAME: MYDB 
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_USER: testuser
       WORDPRESS_DB_PASSWORD: password
     networks:
-      - wpsite
-networks:
-  wpsite:
+      - mysqlnet
 volumes:
-  db_data:
+  v_mysql_data:
+  v_wp_data:
+networks:
+  mysqlnet:
