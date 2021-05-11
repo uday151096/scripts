@@ -1,3 +1,5 @@
+# Important: Please use Ubuntu 18.4 version. Otherwise you may face sonarqube started but the link is not up
+
 # install docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
@@ -21,6 +23,6 @@ docker-compose --version
 
 sudo sysctl -w vm.max_map_count=262144
 mkdir sonar
-wget https://raw.githubusercontent.com/awstechguide/scripts/master/docker-compose.yml
+wget https://raw.githubusercontent.com/awstechguide/scripts/master/docker/docker-compose/docker-compose-sonar.yml
 sudo docker–compose up
 docker ps
