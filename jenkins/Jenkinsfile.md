@@ -1,4 +1,6 @@
-`Jenkins pipeline file reference`
+`Jenkins declarative pipeline scripts`
+
+`Below are the pipeline script reference with project reference`
 
   Project Repo: https://github.com/awstechguide/spring-webapp
   Jenkinsfile: https://raw.githubusercontent.com/awstechguide/spring-webapp/master/Jenkinsfile
