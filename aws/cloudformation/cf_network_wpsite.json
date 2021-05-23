@@ -22,7 +22,7 @@
         },
         "LatestAmiId" : {
             "Type" : "AWS::EC2::Image::Id",
-            "Default" : "ami-0885b1f6bd170450c"
+            "Default" : "ami-0747bdcabd34c712a"
         }
     },
     "Resources" : {
