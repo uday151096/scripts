@@ -73,6 +73,8 @@ useradd -d /home/awstechguide -m awstechguide
 passwd awstechguide
 passwd -x -1 awstechguide
 
+## change to the new user
+su -s awstechguide
 
 ### *********add user to docker group after docker installation***********
 
