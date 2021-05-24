@@ -15,24 +15,20 @@
 	
 ## Add Docker’s official GPG key:
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
-## Verify that you now have the key with the fingerprint
-
-  sudo apt-key fingerprint 0EBFCD88
 
 ## Use the following command to set up the stable repository. To add the nightly or test repository, add the word nightly or test (or both) after the word stable in the commands below
 
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    
    
 ## Update the apt package index, and install the latest version of Docker Engine and containerd, or go to the next step to install a specific version: 
 
-    sudo apt-get update
-    sudo apt-get install docker-ce docker-ce-cli containerd.io
+ sudo apt-get update
+ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ### -------------Optional----------------
 ### To install a specific version of Docker Engine, list the available versions in the repo, then select and install:
