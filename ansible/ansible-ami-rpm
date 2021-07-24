@@ -1,5 +1,4 @@
-wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
---2020-01-21 09:54:33-- https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm--2020-01-21 09:54:33-- https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 
 
